@@ -30,6 +30,10 @@
 
 }
 
-.SideMenu {}
+.SideMenu {
 
-.PageContent {}
+}
+
+.PageContent {
+    padding-left: 12px;
+}
