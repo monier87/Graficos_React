@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import Dashboard from '../../Pages/dashboard/index'
-import Inventarios from '../../Pages/inventarios/index'
-import Ordenes from '../../Pages/ordenes/index'
-import Usuarios from '../../Pages/usuarios/index'
+import Dashboard from '../Pages/dashboard'
+import Inventarios from '../Pages/inventarios'
+import Ordenes from '../Pages/ordenes'
+import Usuarios from '../Pages/usuarios'
 
 
 function AppRoutes() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MailOutlined, BellFilled } from "@ant-design/icons";
-import footerImage from '../../assets/footer.jpg';
+import footerImage from '../assets/footer.jpg';
 import { Space, Typography, Badge } from 'antd';
 
 function AppHeader() {
