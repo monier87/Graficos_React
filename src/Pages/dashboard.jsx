@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { DollarCircleOutlined, ShopOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import { Card, Typography, Space, Statistic, Table } from 'antd';
+import getOrders from '../API/API';
 
 function Dashboard() {
   return (
@@ -87,23 +88,39 @@ function DashboardCard({ title, value, icon }) {
   );
 }
 function RecentOrders(){
+  const [dataSource, setDataSource] = useState([])
+  const [loading, setLoading]= useState(false)
+
+
+  useEffect(() => {
+    setLoading(true)
+    getOrders().then((res)=>{
+      setDataSource(res.products);
+      setLoading(false);
+    });
+  }, []);
+
+
   return (
   <Table   
   columns={[
     {
-      title:'title',
-      dattaIndex: 'title',
+      title: "Descripcion",
+      dataIndex: "title",
     },
     {
-      title:'Quantity',
-      dattaIndex: 'quantity',
+      title: "Cantidad",
+      dataIndex: "quantity",
     },
     {
-      title:'Price',
-      dattaIndex: 'title',
+      title: "Precio",
+      dataIndex: "discountedPrice",
     },
-  ]}>
-  
+  ]}
+  loading={loading}
+  dataSource={dataSource}
+  >
+   
   </Table>
   )
 }
