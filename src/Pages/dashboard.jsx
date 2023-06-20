@@ -1,10 +1,10 @@
 import React from 'react';
 import { DollarCircleOutlined, ShopOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
-import { Card, Typography, Space, Statistic } from 'antd';
+import { Card, Typography, Space, Statistic, Table } from 'antd';
 
 function Dashboard() {
   return (
-    <div>
+    <Space size={20} direction="vertical">
       <Typography.Title level={5}>Dashboard</Typography.Title>
       <Space direction='horizontal'>
         <DashboardCard
@@ -68,7 +68,10 @@ function Dashboard() {
           value={12345}
         />
       </Space>
-    </div>
+      <Space>
+        <RecentOrders />
+      </Space>
+    </Space>
   );
 }
 
@@ -80,7 +83,30 @@ function DashboardCard({ title, value, icon }) {
         <Statistic title={title} value={value} />
       </Space>
     </Card>
+    
   );
 }
+function RecentOrders(){
+  return (
+  <Table   
+  columns={[
+    {
+      title:'title',
+      dattaIndex: 'title',
+    },
+    {
+      title:'Quantity',
+      dattaIndex: 'quantity',
+    },
+    {
+      title:'Price',
+      dattaIndex: 'title',
+    },
+  ]}>
+  
+  </Table>
+  )
+}
+
 
 export default Dashboard;
