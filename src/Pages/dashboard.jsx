@@ -63,7 +63,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Orders"}
+          title={"Ordenes"}
           value={orders}
         />
         <DashboardCard
@@ -78,7 +78,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Inventory"}
+          title={"Inventario"}
           value={inventory}
         />
         <DashboardCard
@@ -93,7 +93,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Customer"}
+          title={"Usuarios"}
           value={customers}
         />
         <DashboardCard
@@ -108,7 +108,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Revenue"}
+          title={"Ganancias"}
           value={revenue}
         />
       </Space>
@@ -144,19 +144,19 @@ function RecentOrders() {
 
   return (
     <>
-      <Typography.Text>Recent Orders</Typography.Text>
+      <Typography.Text>Ordenes Recientes</Typography.Text>
       <Table
         columns={[
           {
-            title: "Title",
+            title: "Descripcion",
             dataIndex: "title",
           },
           {
-            title: "Quantity",
+            title: "Cantidad",
             dataIndex: "quantity",
           },
           {
-            title: "Price",
+            title: "Precio",
             dataIndex: "discountedPrice",
           },
         ]}
@@ -187,7 +187,7 @@ function DashboardChart() {
         labels,
         datasets: [
           {
-            label: "Revenue",
+            label: "Ganancias",
             data: data,
             backgroundColor: "rgba(255, 0, 0, 1)",
           },
@@ -206,7 +206,7 @@ function DashboardChart() {
       },
       title: {
         display: true,
-        text: "Order Revenue",
+        text: "Ingresos de Pedidos",
       },
     },
   };
