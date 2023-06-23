@@ -1,4 +1,4 @@
-import { Space, Typography, Table } from 'antd';
+import { Space, Typography, Table, Rate, Avatar } from 'antd';
 import { useEffect, useState } from 'react';
 import { getInventory } from '../API/API';
 
@@ -14,28 +14,50 @@ function Inventario() {
   }, []);
 
   return (
-    <Space size={20}>
+    <Space size={20} direction='vertical'>
       <Typography.Title level={5}>Inventario</Typography.Title>
       <Table
         dataSource={dataSource}
         columns={[
           {
-            title: 'Title',
+            title: 'Miniatura',
+            dataIndex: 'thumbnail',
+            render:(link)=>{
+              return <Avatar src={link} />;
+            },
+          },
+          {
+            title: 'Descripción',
             dataIndex: 'title',
           },
           {
-            title: 'Title',
-            dataIndex: 'title',
+            title: 'Precio',
+            dataIndex: 'price',
+            render:(value)=><span>${value}</span>,
           },
           {
-            title: 'Title',
-            dataIndex: 'title',
+            title: 'Clasificación',
+            dataIndex: 'rating',
+            render: (rating)=>{
+              return <Rate value={rating} allowHalf disabled/>
+            }
           },
           {
-            title: 'Title',
-            dataIndex: 'title',
+            title: 'Existencia',
+            dataIndex: 'stock',
+          },
+          {
+            title: 'Marca',
+            dataIndex: 'brand',
+          },
+          {
+            title: 'Categoría',
+            dataIndex: 'category',
           },
         ]}
+        pagination={{
+          pageSize: 5,
+        }}
       />
     </Space>
   );
