@@ -16,3 +16,5 @@ export const getCustomers = () => {
 export const getComments = () => {
   return fetch("https://dummyjson.com/comments").then((res) => res.json());
 };
+
+//Se utilizo como fuente para las API la pagina dummyjson.com

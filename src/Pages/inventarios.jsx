@@ -10,6 +10,7 @@ function Inventario() {
     setLoading(true);
     getInventory().then(res => {
       setDataSource(res.products);
+      setLoading(false);
     });
   }, []);
 
@@ -17,6 +18,7 @@ function Inventario() {
     <Space size={20} direction='vertical'>
       <Typography.Title level={5}>Inventario</Typography.Title>
       <Table
+        loading={loading}
         dataSource={dataSource}
         columns={[
           {
